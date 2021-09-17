@@ -1,0 +1,214 @@
+ body{
+    background-color:none;
+     
+     color:rgb(243, 236, 236);
+     font-family: Arial, Helvetica, sans-serif;
+     margin: 0;
+     padding: 0;
+     overflow-x: hidden; /* Hide vertical scrollbar */
+ }
+
+ header{
+     background-color:none;
+     padding: 20px;
+ }
+
+ section{
+     position: relative;
+     background-color:none;
+     left: 50%;
+     top: -350px;
+     /*color: grey;
+     padding: 120px 100px;
+     display: flex;
+     flex-direction: row;*/
+
+ }
+
+ h1{
+     color: black;
+     
+ }
+
+ ul{
+     margin: 0;
+     padding:0;
+    
+     list-style-type: none;
+
+ }
+
+ nav{
+    justify-content: space-around;
+    align-items:center;
+    position: absolute;
+    left: 40%; /*home buses .... heading  movement */
+    
+    /*transform: translate(5%,-50%);*/
+    display:flex;
+    
+    width: 70%;
+ }
+
+ 
+
+ li{
+     display:inline-block;
+     font-size: 20px;
+     margin-right: 20px;
+     color: white;
+     }
+li:hover{
+    color:black;
+    transform: scale(1.2);
+    cursor: pointer;
+}     
+
+ div{
+    background-color:none;
+    margin: auto;
+    width: auto;
+    
+    
+}
+ 
+.next{
+    position: relative;
+    left: -20px;
+    top: -130px;
+    }
+ .next:hover  {
+    transform: scale(1.5);
+    cursor: pointer;
+    }   
+.back{
+    position: relative;
+    left:20px;
+    top: -130px;
+    z-index:10 ;
+}
+
+.back:hover {
+    transform: scale(1.5);
+    cursor: pointer;
+    } 
+
+.box img {    /* images like plane and train are displayed here */
+    width: 500px;
+    height: 300px;
+   
+}
+
+.box:hover{
+    transform: scale(0.8);
+    cursor: pointer;
+}
+
+.box1 img {
+    object-fit: cover;
+}
+ .heading{
+    position:relative ;
+    color: white;
+    /*font-family:Georgia, 'Times New Roman', Times, serif; */
+    font-size: 70px;
+    left: 40px;
+    top: -20px;
+ }
+ .heading:hover{
+     transform:scale(1.2);
+     left: 150px;
+     cursor: pointer;
+ }
+ .subheading{
+     position: relative;
+     font-style:normal;
+     left: 50px;
+     top: -60px;
+ }
+ .subheading:hover{
+     transform: scale(1.2);
+     left:150px;
+     cursor: pointer;
+ }
+
+.userEmail{
+    position: relative;
+    top: -140px;
+    font-size: 30px;
+    left:2%;
+}
+.iUserEmail{
+    position: relative;
+    font-size: 30px;
+    left:2%;
+    top: -155px;
+}
+.iUserEmail:hover{
+    cursor: pointer;
+}
+.userDetails{
+    position: relative;
+    font-size: 30px;
+    left:-1%;
+    top: -50px;
+}
+.userPassword{
+    font-size: 30px;
+    position: relative;
+    left:2%;
+    top: -175px;
+}
+.iUserPassword{
+    font-size: 30px;
+    position: relative;
+    left:2%;
+    top: -200px;
+}
+.iUserPassword:hover{
+    cursor: pointer;
+}
+.submit{
+    position:relative;
+    color: white;
+    background-color: darkgreen;
+    font-size: 30px;
+    top: -145px;
+    left:-20%;
+    padding: 5px 49px 5px 50px;
+    
+}
+
+
+.submit:hover{
+    transform: scale(0.8);
+}
+
+.register{
+    position:relative;
+    color: white;
+    background-color: darkgreen;
+    font-size: 30px;
+    top: -90px;
+    left:-33.6%;
+    padding: 5px 25px 5px 40px;
+    max-width: 174px;
+}
+.register:hover{
+    transform: scale(0.8);
+}
+
+.check{
+    position: relative;
+    left: 10%;
+}
+ /* box{
+    max-width: 10%;
+    max-height: 100%;
+    
+} */  
+
+ 
+
+
+ 
