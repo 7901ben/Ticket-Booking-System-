@@ -4,7 +4,7 @@ document.getElementById("back").addEventListener("click", prevImg);
 document.getElementById("box");
 document.getElementById("login").addEventListener("click",scroll);
 document.getElementById("submit").addEventListener("click",getUserDetails);
-
+document.getElementById("about").addEventListener("click",scrollForAboutUS);
 setInterval(nextImg, 2000)
 var imageNo = 1;
 
@@ -62,6 +62,10 @@ function prevImg(){
 
 function scroll(){
     window.scrollTo(0,300);
+    } 
+
+function scrollForAboutUS(){
+    window.scrollTo(0,1200);
     } 
 
 

@@ -207,8 +207,22 @@ li:hover{
     max-height: 100%;
     
 } */  
+.about{
+    position: relative;
+    top: 250px;
+    padding: 5px 49px 200px 50px;
+    background-color: rgb(41, 40, 40);
+}
+.table, th,td{
+    position: relative;
+    border:1px solid rgb(245, 243, 243);
+    font-size: 30px;
+}
+.table{
+    position: relative;
+    top: 100px;
+}
 
- 
 
 
  
