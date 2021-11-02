@@ -5,6 +5,7 @@ document.getElementById("box");
 document.getElementById("login").addEventListener("click",scroll);
 document.getElementById("submit").addEventListener("click",getUserDetails);
 document.getElementById("about").addEventListener("click",scrollForAboutUS);
+
 setInterval(nextImg, 2000)
 var imageNo = 1;
 
