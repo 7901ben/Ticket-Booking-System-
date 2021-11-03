@@ -1,0 +1,308 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Hogwarts Train Booking</title>
+    <link rel="stylesheet" type="text/css" href="train.css" />
+
+
+    <script type="text/javascript">
+        function getUrlVars() { //Function used to get values from the URL after being submitted by the previous page using GET
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        function outputConfirmation() {
+
+            /////////////////////////////////////////////////////////
+            ///// Grab all data from URL and store in Valiables /////
+            /////////////////////////////////////////////////////////
+
+            var from = getUrlVars()["from"];
+            from = from.replace(/\u002B/g, " ");
+            var to = getUrlVars()["to"];
+            to = to.replace(/\u002B/g, " ");
+            var journey = getUrlVars()["journey"];
+            var departday = getUrlVars()["departday"];
+            var departmonth = getUrlVars()["departmonth"];
+            var departmin = getUrlVars()["departmin"];
+            var departhour = getUrlVars()["departhour"];
+            var returnday = getUrlVars()["returnday"];
+            var returnmonth = getUrlVars()["returnmonth"];
+            var returnhour = getUrlVars()["returnhour"];
+            var returnmin = getUrlVars()["returnmin"];
+            var adults = getUrlVars()["adults"];
+            var children = getUrlVars()["children"];
+            var tclass = getUrlVars()["tclass"];
+            var title = getUrlVars()["title"];
+            var fname = getUrlVars()["fname"];
+            fname = fname.replace(/\u002B/g, " ");
+            var lname = getUrlVars()["lname"];
+            lname = lname.replace(/\u002B/g, " ");
+            var email = getUrlVars()["email"];
+            email = email.replace('%40', '@');
+            var phone = getUrlVars()["phone"];
+            phone = phone.replace(/\u002B/g, " ");
+            phone = phone.replace('%2B', '+');
+            var address1 = getUrlVars()["address1"];
+            address1 = address1.replace(/\u002B/g, " ");
+            var address2 = getUrlVars()["address2"];
+            address2 = address2.replace(/\u002B/g, " ");
+            var town = getUrlVars()["town"];
+            var county = getUrlVars()["county"];
+            var postcode = getUrlVars()["postcode"];
+            postcode = postcode.replace(/\u002B/g, " ");
+
+            document.getElementById('from').innerHTML += from; //Print out departure station
+            document.getElementById('to').innerHTML += to; //Print out destination station
+
+            document.getElementById('departday').innerHTML += departday; //Print out departure day
+            document.getElementById('departmonth').innerHTML += departmonth; //Print out departure month
+            document.getElementById('departmin').innerHTML += departmin; //Print out departure minutes
+            document.getElementById('departhour').innerHTML += departhour; //Print out departre hour
+
+            if (journey == "return") { //If the travel is a Return journey
+                var returndetails = "Returning: " + returnday + " " + returnmonth + " @ " + returnhour + ":" + returnmin; //Generate the return details
+            } else {
+                var returndetails = "";
+            } //Set return details to blank
+
+            document.getElementById('returndetails').innerHTML += returndetails; //Print out return details
+
+            document.getElementById('tclass').innerHTML += tclass; //Print out ticket class
+
+            document.getElementById('adults').innerHTML += adults; //Print out number of adult tickets
+            document.getElementById('children').innerHTML += children; //Print out number of child tickets
+
+            document.getElementById('name').innerHTML += title + " " + fname + " " + lname; //Print out full name
+            document.getElementById('address1').innerHTML += address1; //Print out address line 1
+            if (address2 != "") {
+                document.getElementById('address2').innerHTML += address2;
+            } //If address2 isnt empty then print out address line 2
+            document.getElementById('town').innerHTML += town; //Print out town
+            document.getElementById('county').innerHTML += county; //Print out county
+            document.getElementById('postcode').innerHTML += postcode; //Print out postcode
+
+            document.getElementById('email').innerHTML += email; //Print out email address
+            if (phone != "") {
+                document.getElementById('phone').innerHTML += "Phone: " + phone;
+            } else {
+                phone = "";
+            } //If phone number was provided print it out
+
+            var price = 0; //Set price to 0
+
+            //////////////////////////////////////////////////////////
+            ///// Set price for single ticket between 2 stations /////
+            //////////////////////////////////////////////////////////
+
+            if (from == "Truro" && to == "Bristol Temple Meads") {
+                price = 60;
+            }
+            if (from == "Truro" && to == "Cardiff Central") {
+                price = 70;
+            }
+            if (from == "Truro" && to == "London Paddington") {
+                price = 50;
+            }
+            if (from == "Truro" && to == "Manchester") {
+                price = 100;
+            }
+            if (from == "Truro" && to == "Plymouth") {
+                price = 15;
+            }
+
+            if (from == "Bristol Temple Meads" && to == "Truro") {
+                price = 60;
+            }
+            if (from == "Bristol Temple Meads" && to == "Cardiff Central") {
+                price = 20;
+            }
+            if (from == "Bristol Temple Meads" && to == "London Paddington") {
+                price = 50;
+            }
+            if (from == "Bristol Temple Meads" && to == "Manchester") {
+                price = 50;
+            }
+            if (from == "Bristol Temple Meads" && to == "Plymouth") {
+                price = 40;
+            }
+
+            if (from == "Cardiff Central" && to == "Truro") {
+                price = 70;
+            }
+            if (from == "Cardiff Central" && to == "Bristol Temple Meads") {
+                price = 20;
+            }
+            if (from == "Cardiff Central" && to == "London Paddington") {
+                price = 30;
+            }
+            if (from == "Cardiff Central" && to == "Manchester") {
+                price = 40;
+            }
+            if (from == "Cardiff Central" && to == "Plymouth") {
+                price = 60;
+            }
+
+            if (from == "London Paddington" && to == "Truro") {
+                price = 50;
+            }
+            if (from == "London Paddington" && to == "Bristol Temple Meads") {
+                price = 50;
+            }
+            if (from == "London Paddington" && to == "Cardiff Central") {
+                price = 30;
+            }
+            if (from == "London Paddington" && to == "Manchester") {
+                price = 60;
+            }
+            if (from == "London Paddington" && to == "Plymouth") {
+                price = 40;
+            }
+
+            if (from == "Manchester" && to == "Truro") {
+                price = 100;
+            }
+            if (from == "Manchester" && to == "Bristol Temple Meads") {
+                price = 50;
+            }
+            if (from == "Manchester" && to == "Cardiff Central") {
+                price = 40;
+            }
+            if (from == "Manchester" && to == "London Paddington") {
+                price = 60;
+            }
+            if (from == "Manchester" && to == "Plymouth") {
+                price = 80;
+            }
+
+            if (from == "Plymouth" && to == "Truro") {
+                price = 15;
+            }
+            if (from == "Plymouth" && to == "Bristol Temple Meads") {
+                price = 40;
+            }
+            if (from == "Plymouth" && to == "Cardiff Central") {
+                price = 60;
+            }
+            if (from == "Plymouth" && to == "London Paddington") {
+                price = 40;
+            }
+            if (from == "Plymouth" && to == "Manchester") {
+                price = 80;
+            }
+
+            var adultsprice = price * adults; //For every adult ticket multiply the ticket price and store in adultsprice
+
+            var childprice = price * (children / 2); //For every child multiply the ticket price by .5 so a child ticket is half that of an adult and store in childprice
+
+            price = adultsprice + childprice; //Add the adultprice and childprice together and store in price
+
+            if (tclass == "First") {
+                price = price * 2.5;
+            } //If tickets are for first class multiply price by 2.5 to make them more expensive than standard class tickets
+
+            var departprice = price; //Set departprice to be the same as price
+
+            document.getElementById('departprice').innerHTML += "&pound;" + price.toFixed(2); //Print out the current price in departprice with a £ sign and rounded to two decimal places
+
+            if (journey == "return") {
+                price = price * 1.75;
+            } //If the tickets are for a return journey multiply the total price by 1.75 so the return journey costs 75% of the outward journey
+
+            if (journey == "return") { //If tickets are for a return journey
+                document.getElementById('returnprice').innerHTML += "Return Price: &pound;" + (price - departprice).toFixed(2); //Print out the price of the return ticket by subtracting the departprice from price and rounding to two decimal places
+            }
+
+            document.getElementById('totalprice').innerHTML += "&pound;" + price.toFixed(2); //Print out the total price
+
+        }
+
+        function printConfirmation() {
+
+            window.print(); //Print the page
+
+        }
+    </script>
+
+</head>
+
+<body onload="outputConfirmation();">
+    <div id="container">
+        <div id="header">
+            <h1>Hogwarts Train Booking</h1>
+        </div>
+
+        <div id="step3">
+            <div id="inner-container">
+
+                <div class="form-left">
+
+                    From: <span id="from"></span>
+                    <p>
+
+                        To: <span id="to"></span>
+                        <p>
+
+                            Departing: <span id="departday"></span> <span id="departmonth"></span> @ <span id="departhour"></span>:<span id="departmin"></span>
+                            <p>
+
+                                <span id="returndetails"></span>
+                                <p>
+
+                                    Ticket Class: <span id="tclass"></span>
+                                    <p>
+
+                                        Adults: <span id="adults"></span>
+                                        <p>
+                                            Children: <span id="children"></span>
+
+                </div>
+
+                <div class="form-right step3-right-shift">
+
+                    <p class="address">
+                        <span id="name"></span>
+                        <p class="address">
+                            <span id="address1" class="address"></span>
+                            <p class="address">
+                                <span id="address2" class="address"></span>
+                                <p class='address'>
+                                    <span id="town" class="address"></span>
+                                    <p class="address">
+                                        <span id="county" class="address"></span>
+                                        <p class="address">
+                                            <span id="postcode" class="address"></span>
+                                            <p>
+                                                <p>
+                                                    </br>
+                                                    <p class="address">
+                                                        Outbound Price: <span id="departprice"></span>
+                                                        <p class="address">
+                                                            <span id="returnprice"></span>
+                                                            <p class="address">
+                                                                Total Price: <span id="totalprice"></span>
+                                                                <p class="address">
+
+                </div>
+
+                <div id="contactdetails">
+                    <p class="address">
+                        Email: <span id="email"></span>
+                        <p class="address">
+                            <span id="phone"></span>
+                            <p class="address">
+                </div>
+
+                <div class="next-button"><a class="button medium white" onclick="printConfirmation();"><span>Print Confirmation</span></a></div>
+
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

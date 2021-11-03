@@ -1,0 +1,599 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Hogwarts Train Booking</title>
+    <link rel="stylesheet" type="text/css" href="train.css" />
+
+
+    <script type="text/javascript">
+        function step2() {
+
+            error = 0; //Set error to 0, initialize value
+
+            to = document.getElementById('to').value; //Get the value of the to select box and store it in the variable to
+            if (document.getElementById('to').selectedIndex == 0) {
+                error = 2;
+            } //Check that a destination station has been selected, if not change the value of error to 2
+
+            from = document.getElementById('from').value; //Get the value of the from select box and store it in the variable from
+            if (document.getElementById('from').selectedIndex == 0) {
+                error = 1;
+            } //Check that a departure station has been selected, if not change the value of error to 1
+
+            if (error == 0) {
+                if (document.getElementById('to').selectedIndex == document.getElementById('from').selectedIndex) {
+                    error = 3;
+                }
+            } //Check that the departure and destination stations do not match, if they match set error to 3
+
+            if (document.getElementById('single').checked == true) {
+                journey = "Single";
+            } else {
+                journey = "Return";
+            } //Check of the single radio button is checked, if it is journey is Single else its a Return
+
+            departday = document.getElementById('departday').selectedIndex; //Get the selectedIndex of departday and store it in a variable departday
+            departmonth = document.getElementById('departmonth').selectedIndex; //Get the selectedIndex of departmonth and store it in a variable departmonth
+            departhour = document.getElementById('departhour').selectedIndex; //Get the selectedIndex of departhour and store it in a variable departhour
+            departmin = document.getElementById('departmin').selectedIndex; //Get the selectedIndex of departmin and store it in a variable departmin
+
+            returnday = document.getElementById('returnday').selectedIndex; //Get the selectedIndex of returnday and store it in a variable returnday
+            returnmonth = document.getElementById('returnmonth').selectedIndex; //Get the selectedIndex of returnmonth and store it in a variable returnmonth
+            returnhour = document.getElementById('returnhour').selectedIndex; //Get the selectedIndex of returnhour and store it in a variable returnhour
+            returnmin = document.getElementById('returnmin').selectedIndex; //Get the selectedIndex of returnmin and store it in a variable returnmin
+
+            if (error == 0) {
+                if (departday == 0 || departmonth == 0 || departhour == 0 || departmin == 0) {
+                    error = 4;
+                }
+            } //Check that all depart date and time values have been selected
+
+            if (error == 0 && journey == "Return") {
+                if (returnday == 0 || returnmonth == 0 || returnhour == 0 || returnmin == 0) {
+                    error = 5;
+                }
+            } //If journey is a return check that all returning date and time values have been selected
+
+            if (error == 0 && journey == "Return" && departmonth < 10) //If its a return journey and the departing month is less than 10 (I checked the departing month to allow passengers to book trains from October to return in the new year)
+            {
+                if (returnmonth < departmonth) {
+                    error = 6;
+                } //If the returning month is less than (earlier than) the departing month set error to 6
+                else if (returnday < departday && returnmonth == departmonth) {
+                    error = 6;
+                } //Else if the returning day is before the departing day and the month is the same set error to 6
+            }
+
+            if (error == 0 && departmonth == returnmonth && journey == "Return" && departday == returnday) //If the passenger is departing and returning on the same day
+            {
+                if ((returnhour - departhour) < 8) {
+                    error = 7;
+                } //Make sure there is an 8 hour gap between journeys, if there isnt then set error to 7
+            }
+
+            adults = document.getElementById('adults').selectedIndex; //Get the number of adult tickets from the adults select box
+            children = document.getElementById('children').selectedIndex; //Get the number of children tickets from the children select box 
+
+            if (adults == 0 && children == 0 && error == 0) {
+                error = 8;
+            } //If there are no adult tickets, no child tickets and error is still 0 set error to 8
+
+            //if (document.getElementById('standard').checked == true) { ticketclass = "Standard"; } else { ticketclass = "First"; }
+
+            if (error == 0) { //If error is still 0
+                document.getElementById('step2').style.visibility = "visible"; //Show the element with the ID step2
+                document.getElementById('step1').style.visibility = "hidden"; //Hide the element with the ID step1
+            } else if (error == 1) {
+                alert("Departure Station Missing"); //If error is 1 then show alert
+            } else if (error == 2) {
+                alert("Destination Station Missing"); //If error is 2 then show alert
+            } else if (error == 3) {
+                alert("Departure Station and Destination cannot match"); //If error is 3 then show alert
+            } else if (error == 4) {
+                alert("Departure Date and Time must be selected"); //If error is 4 then show alert
+            } else if (error == 5) {
+                alert("Return Date and Time must be selected"); //If error is 5 then show alert
+            } else if (error == 6) {
+                alert("You cannot return before you depart"); //If error is 6 then show alert
+            } else if (error == 7) {
+                alert("You must leave 8 hours between your journeys"); //If error is 7 then show alert
+            } else if (error == 8) {
+                alert("You must have at least 1 Adult or Child"); //If error is 8 then show alert
+            }
+
+        }
+
+        function step3() {
+
+            error = 0; //Set error to 0
+
+            title = document.getElementById('title').selectedIndex; //Get the selectedIndex of title from the form
+
+            if (title == 0) {
+                error = 1;
+            } //If no title is selected then set error to 1
+
+            fname = document.getElementById('fname').value; //Get the value from fname on the form and store it in the variable fname
+            lname = document.getElementById('lname').value; //Get the value from lname on the form and store it in the variable lname
+            email = document.getElementById('email').value; //Get the value from email on the form and store it in the variable email
+            phone = document.getElementById('phone').value; //Get the value from phone on the form and store it in the variable phone
+            address1 = document.getElementById('address1').value; //Get the value from address1 on the form and store it in the variable address1
+            address2 = document.getElementById('address2').value; //Get the value from address2 on the form and store it in the variable address2
+            town = document.getElementById('town').value; //Get the value from town on the form and store it in the variable town
+            county = document.getElementById('county').value; //Get the value from county on the form and store it in the variable county
+            postcode = document.getElementById('postcode').value; //Get the value from postcode on the form and store it in the variable postcode
+
+            if (error == 0) {
+                if (fname == "") {
+                    error = 2;
+                }
+            } //If error is equal to 0 and fname is empty set error to 2
+            if (error == 0) {
+                if (lname == "") {
+                    error = 3;
+                }
+            } //If error is equal to 0 and lname is empty set error to 3
+            if (error == 0) {
+                if (email == "") {
+                    error = 4;
+                }
+            } //If error is equal to 0 and email is empty set error to 4
+            if (error == 0) {
+                if (address1 == "") {
+                    error = 5;
+                }
+            } //If error is equal to 0 and address1 is empty set error to 5
+            if (error == 0) {
+                if (town == "") {
+                    error = 6;
+                }
+            } //If error is equal to 0 and address2 is empty set error to 6
+            if (error == 0) {
+                if (county == "") {
+                    error = 7;
+                }
+            } //If error is equal to 0 and county is empty set error to 7
+            if (error == 0) {
+                if (postcode == "") {
+                    error = 8;
+                }
+            } //If error is equal to 0 and postcode is empty set error to 8
+            if (error == 0) {
+                if (email.indexOf('@') == -1) {
+                    error = 9;
+                }
+            } //If error is equal to 0 and if email doesn't contain an @ symbol set error to 9
+            if (error == 0) {
+                if (email.indexOf('.') == -1) {
+                    error = 9;
+                }
+            } //If error is equal to 0 and if email doesn't contain a . set error to 9
+
+
+            if (error == 0) //If error is equal to 0
+            {
+
+                document.forms["tickets"].submit(); //Submit the form
+
+            } else if (error == 1) {
+                alert("Please select your title"); //If error is 1 then show alert
+            } else if (error == 2) {
+                alert("Please enter your First Name"); //If error is 2 then show alert
+            } else if (error == 3) {
+                alert("Please enter your Last Name"); //If error is 3 then show alert
+            } else if (error == 4) {
+                alert("Please enter your email address"); //If error is 4 then show alert
+            } else if (error == 5) {
+                alert("Please enter the first line of your address"); //If error is 5 then show alert
+            } else if (error == 6) {
+                alert("Please enter your Town/City"); //If error is 6 then show alert
+            } else if (error == 7) {
+                alert("Please enter your County"); //If error is 7 then show alert
+            } else if (error == 8) {
+                alert("Please enter your Postcode"); //If error is 8 then show alert
+            } else if (error == 9) {
+                alert("Please enter a valid email"); //If error is 9 then show alert
+            }
+
+        }
+
+        function enableReturn() {
+            document.getElementById('returnday').disabled = false; //Enable the element with the ID returnday
+            document.getElementById('returnhour').disabled = false; //Enable the element with the ID returnhour
+            document.getElementById('returnmonth').disabled = false; //Enable the element with the ID returnmonth
+            document.getElementById('returnmin').disabled = false; //Enable the element with the ID returnmin
+        }
+
+        function disableReturn() {
+            document.getElementById('returnday').disabled = true; //Disable the element with the ID returnday
+            document.getElementById('returnhour').disabled = true; //Disable the element with the ID returnhour
+            document.getElementById('returnmonth').disabled = true; //Disable the element with the ID returnmonth
+            document.getElementById('returnmin').disabled = true; //Disable the element with the ID returnmin
+            document.tickets.returnday[0].selected = "1"; //Change the returnday select box so no number is selected
+            document.tickets.returnmonth[0].selected = "1"; //Change the returnmonth select box so no number is selected
+            document.tickets.returnhour[0].selected = "1"; //Change the returnhour select box so no number is selected
+            document.tickets.returnmin[0].selected = "1"; //Change the returnmin select box so no number is selected
+        }
+
+        function resetform() {
+            document.getElementById('returnday').disabled = true; //Disable the element with the ID returnday
+            document.getElementById('returnhour').disabled = true; //Disable the element with the ID returnhour
+            document.getElementById('returnmonth').disabled = true; //Disable the element with the ID returnmonth
+            document.getElementById('returnmin').disabled = true; //Disable the element with the ID returnmin
+            document.getElementById('single').checked = true; //Check the radio button with the ID single
+            document.getElementById('standard').checked = true; //Check the radio button with the ID standard
+            document.tickets.departday[0].selected = "1"; //Change the departday select box so no number is selected
+            document.tickets.departmonth[0].selected = "1"; //Change the departmonth select box so no number is selected
+            document.tickets.departhour[0].selected = "1"; //Change the departhour select box so no number is selected
+            document.tickets.departmin[0].selected = "1"; //Change the departmin select box so no number is selected
+            document.tickets.returnday[0].selected = "1"; //Change the returnday select box so no number is selected
+            document.tickets.returnmonth[0].selected = "1"; //Change the returnmonth select box so no number is selected
+            document.tickets.returnhour[0].selected = "1"; //Change the returnhour select box so no number is selected
+            document.tickets.returnmin[0].selected = "1"; //Change the returnmin select box so no number is selected
+            document.tickets.from[0].selected = "1"; //Change the from select box so no number is selected
+            document.tickets.to[0].selected = "1"; //Change the to select box so no number is selected
+            document.tickets.adults[0].selected = "1"; //Change the adults select box so no number is selected
+            document.tickets.children[0].selected = "1"; //Change the children select box so no number is selected
+        }
+
+        function backToStep1() {
+
+            document.getElementById('step1').style.visibility = "visible"; //Show the element with the ID step1
+            document.getElementById('step2').style.visibility = "hidden"; //Hide the element with the ID step2
+
+        }
+    </script>
+
+</head>
+
+<body onLoad="resetform();">
+    <div id="container">
+        <div id="header">
+            <h1>Hogwarts Train Booking</h1>
+        </div>
+
+
+
+
+        <form name="tickets" enctype="multipart/form-data" method="get" action="confirmation.html">
+
+            <div id="step1">
+                <div id="inner-container">
+                    <div class="form-left">
+                        <span class="label">From:</span>
+                        <select id="from" name="from">
+					<option>----------------------------</option>
+					<option>Truro</option>
+					<option>Bristol Temple Meads</option>
+					<option>Cardiff Central</option>
+					<option>London Paddington</option>
+					<option>Manchester</option>
+					<option>Plymouth</option>
+				</select>
+
+                        </br>
+
+                        <span class="label">To:</span>
+                        <select id="to" name="to">
+					<option>----------------------------</option>
+					<option>Truro</option>
+					<option>Bristol Temple Meads</option>
+					<option>Cardiff Central</option>
+					<option>London Paddington</option>
+					<option>Manchester</option>
+					<option>Plymouth</option>
+				</select>
+
+                        </br>
+                        </br>
+
+                        <div class="radio">&emsp;&emsp;&emsp;<input id="single" onclick="disableReturn();" type="radio" checked="checked" name="journey" value="single">Single &emsp;&emsp; <input type="radio" name="journey" value="return" onclick="enableReturn();">Return</div>
+
+                        </br>
+
+                        <span class="label">Departing:</span>
+                        <select class="numberselect" name="departday" id="departday">
+					<option>--</option>
+					<option>01</option>
+					<option>02</option>
+					<option>03</option>
+					<option>04</option>
+					<option>05</option>
+					<option>06</option>
+					<option>07</option>
+					<option>08</option>
+					<option>09</option>
+					<option>10</option>
+					<option>11</option>
+					<option>12</option>
+					<option>13</option>
+					<option>14</option>
+					<option>15</option>
+					<option>16</option>
+					<option>17</option>
+					<option>18</option>
+					<option>19</option>
+					<option>20</option>
+					<option>21</option>
+					<option>22</option>
+					<option>23</option>
+					<option>24</option>
+					<option>25</option>
+					<option>26</option>
+					<option>27</option>
+					<option>28</option>
+					<option>29</option>
+					<option>30</option>
+					<option>31</option>
+				</select>
+                        <select name="departmonth" id="departmonth">
+					<option>--------------</option>
+					<option>January</option>
+					<option>February</option>
+					<option>March</option>
+					<option>April</option>
+					<option>May</option>
+					<option>June</option>
+					<option>July</option>
+					<option>August</option>
+					<option>September</option>
+					<option>October</option>
+					<option>November</option>
+					<option>December</option>
+				</select> -
+                        <select class="numberselect" name="departhour" id="departhour">
+					<option>--</option>
+					<option>00</option>
+					<option>01</option>
+					<option>02</option>
+					<option>03</option>
+					<option>04</option>
+					<option>05</option>
+					<option>06</option>
+					<option>07</option>
+					<option>08</option>
+					<option>09</option>
+					<option>10</option>
+					<option>11</option>
+					<option>12</option>
+					<option>13</option>
+					<option>14</option>
+					<option>15</option>
+					<option>16</option>
+					<option>17</option>
+					<option>18</option>
+					<option>19</option>
+					<option>20</option>
+					<option>21</option>
+					<option>22</option>
+					<option>23</option>
+				</select> :
+                        <select class="numberselect" name="departmin" id="departmin">
+					<option>--</option>
+					<option>00</option>
+					<option>15</option>
+					<option>30</option>
+					<option>45</option>
+				</select>
+
+                        </br>
+
+                        <span class="label">Returning:</span>
+                        <select id="returnday" disabled="disabled" class="numberselect" name="returnday">
+					<option>--</option>
+					<option>01</option>
+					<option>02</option>
+					<option>03</option>
+					<option>04</option>
+					<option>05</option>
+					<option>06</option>
+					<option>07</option>
+					<option>08</option>
+					<option>09</option>
+					<option>10</option>
+					<option>11</option>
+					<option>12</option>
+					<option>13</option>
+					<option>14</option>
+					<option>15</option>
+					<option>16</option>
+					<option>17</option>
+					<option>18</option>
+					<option>19</option>
+					<option>20</option>
+					<option>21</option>
+					<option>22</option>
+					<option>23</option>
+					<option>24</option>
+					<option>25</option>
+					<option>26</option>
+					<option>27</option>
+					<option>28</option>
+					<option>29</option>
+					<option>30</option>
+					<option>31</option>
+				</select>
+                        <select id="returnmonth" disabled="disabled" name="returnmonth">
+					<option>--------------</option>
+					<option>January</option>
+					<option>February</option>
+					<option>March</option>
+					<option>April</option>
+					<option>May</option>
+					<option>June</option>
+					<option>July</option>
+					<option>August</option>
+					<option>September</option>
+					<option>October</option>
+					<option>November</option>
+					<option>December</option>
+				</select> -
+                        <select id="returnhour" disabled="disabled" class="numberselect" name="returnhour">
+					<option>--</option>
+					<option>00</option>
+					<option>01</option>
+					<option>02</option>
+					<option>03</option>
+					<option>04</option>
+					<option>05</option>
+					<option>06</option>
+					<option>07</option>
+					<option>08</option>
+					<option>09</option>
+					<option>10</option>
+					<option>11</option>
+					<option>12</option>
+					<option>13</option>
+					<option>14</option>
+					<option>15</option>
+					<option>16</option>
+					<option>17</option>
+					<option>18</option>
+					<option>19</option>
+					<option>20</option>
+					<option>21</option>
+					<option>22</option>
+					<option>23</option>
+				</select> :
+                        <select id="returnmin" disabled="disabled" class="numberselect" name="returnmin">
+					<option>--</option>
+					<option>00</option>
+					<option>15</option>
+					<option>30</option>
+					<option>45</option>
+				</select>
+
+                    </div>
+
+                    <div class="form-right">
+
+                        <span class="label">Adults:</span>
+                        <select class="numberselect" name="adults" id="adults">
+					<option>0</option>
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+					<option>6</option>
+					<option>7</option>
+					<option>8</option>
+					<option>9</option>
+					<option>10</option>
+					<option>11</option>
+					<option>12</option>
+					<option>13</option>
+					<option>14</option>
+					<option>15</option>
+					<option>16</option>
+					<option>17</option>
+					<option>18</option>
+					<option>19</option>
+					<option>20</option>
+				</select>
+
+                        </br>
+
+                        <span class="label">Children:</span>
+                        <select class="numberselect" name="children" id="children">
+					<option>0</option>
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+					<option>6</option>
+					<option>7</option>
+					<option>8</option>
+					<option>9</option>
+					<option>10</option>
+					<option>11</option>
+					<option>12</option>
+					<option>13</option>
+					<option>14</option>
+					<option>15</option>
+					<option>16</option>
+					<option>17</option>
+					<option>18</option>
+					<option>19</option>
+					<option>20</option>
+				</select>
+
+                        </br>
+                        </br>
+
+                        <div class="radio">&emsp;&emsp;&emsp;<input id="standard" checked="checked" type="radio" name="tclass" value="Standard">Standard Class &emsp;&emsp; <input type="radio" name="tclass" value="First">First Class</div>
+
+                    </div>
+
+                    <div class="startagain-button"><a class="button medium white" onclick="resetform();"><span>Start Again</span></a></div>
+                    <div class="next-button"><a class="button medium white" onclick="step2();"><span>Order Tickets</span></a></div>
+                </div>
+            </div>
+
+            <div id="step2">
+                <div id="inner-container">
+
+                    <div class="form-left">
+
+                        <span class="label">Title: <span class="required">*</span></span>
+                        <select name="title" id="title">
+					<option>-----</option>
+					<option>Mr</option>
+					<option>Mrs</option>
+					<option>Miss</option>
+					<option>Dr</option>
+				</select>
+
+                        </br>
+
+                        <span class="label">First Name: <span class="required">*</span></span><input id="fname" required="required" class="textinput" type="text" name="fname" />
+
+                        </br>
+
+                        <span class="label">Family Name: <span class="required">*</span></span><input id="lname" required="required" class="textinput" type="text" name="lname" />
+
+                        </br>
+
+                        <span class="label">Email: <span class="required">*</span></span><input id="email" required="required" class="textinput" type="email" name="email" />
+
+                        </br>
+
+                        <span class="label">Telephone:</span><input id="phone" class="textinput" type="tel" name="phone" />
+
+                    </div>
+
+                    <div class="form-right step2-right-shift">
+
+                        <span class="label">Address Line 1: <span class="required">*</span></span><input id="address1" required="required" class="textinput" type="text" name="address1" />
+
+                        </br>
+
+                        <span class="label">Address Line 2:</span><input id="address2" required="required" class="textinput" type="text" name="address2" />
+
+                        </br>
+
+                        <span class="label">Town/City: <span class="required">*</span></span><input id="town" size="13" required="required" class="textinput" type="text" name="town" />
+
+                        </br>
+
+                        <span class="label">County: <span class="required">*</span></span><input id="county" size="13" required="required" class="textinput" type="text" name="county" />
+
+                        </br>
+
+                        <span class="label">Postcode: <span class="required">*</span></span><input id="postcode" size="8" maxlength="8" required="required" class="textinput" type="text" name="postcode" />
+
+                    </div>
+
+                    <div class="startagain-button"><a class="button medium white" onclick="backToStep1();"><span>Back</span></a></div>
+                    <div class="next-button"><a class="button medium white" onclick="step3();"><span>Order Tickets</span></a></div>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+</body>
+
+</html>
