@@ -1,0 +1,244 @@
+
+body
+{
+    background-color:none;
+    background: url(image.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+     color: magenta;
+     font-family: Arial, Helvetica, sans-serif;
+     margin: 0;
+     padding: 0;
+     overflow-x: hidden; /* Hide vertical scrollbar */
+     overflow-y: hidden;
+}
+
+ header
+ {
+     background-color:none;
+     padding: 10px;
+ }
+
+.heading{
+    position:relative;
+    right:-900px;
+   /* font-family:Georgia, 'Times New Roman', Times, serif; */
+   background-image: linear-gradient(to right,Yellow, magenta, cyan,black);
+   -webkit-background-clip: text;
+   -moz-background-clip: text;
+   background-clip: text;
+   color: transparent;
+    
+   
+
+ }
+ .subheading{
+     position: absolute;
+     right:190px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font: size 1455px;
+  /* color:linear-gradient(green, blue); */
+    background-image: linear-gradient(to right, yellow,magenta, orange, blue, yellow, aqua, red);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+ }
+h3
+{
+    color: black;
+}
+ section{
+     position: relative;
+     background-color: none;
+     left: 50%;
+     top: -350px;
+     color: black;
+     padding: 120px 100px;
+     display: flex;
+     flex-direction: row;
+}
+
+ h1{
+    color: white;
+    left: 220pz;
+    
+}
+
+ul{
+    margin: 0;
+    padding:0;
+    list-style-type: none;
+
+}
+nav{
+    justify-content: space-around;
+    align-items:center;
+    position: absolute;
+    left: 40%; 
+    transform: translate(5%,-50%);
+    display:flex;
+    width: 70%;
+ }
+ li{
+     
+    display:inline-block;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   top:10px;
+    font-size: 20px;
+    margin-right: 50px;
+    color: whitesmoke;
+    }
+li:hover{
+   color:gold;
+   transform: scale(1.2);
+   cursor: pointer;
+}     
+
+div{
+   background-color:none;
+   margin: auto;
+   width: auto;
+   
+   
+}
+
+.next{
+   position: relative;
+   left: -20px;
+   top: -130px;
+   }
+.next:hover  {
+   transform: scale(1.5);
+   cursor: pointer;
+   }   
+.back{
+   position: relative;
+   left:20px;
+   top: -130px;
+   z-index:10 ;
+}
+.back:hover {
+    transform: scale(1.5);
+    cursor: pointer;
+    } 
+    
+     .booking-form {
+      background-color:none;
+      /*update here for border */
+      border: 1px solid none;
+      padding: 25px;
+      border-radius: 5px;
+      float: left;
+      /*for white background in input*/
+      background-color:white;
+  }
+  
+  .booking-form h3 {
+      margin: 20px 0px;
+  }
+  
+  .booking-form .input-group {
+      position: relative;
+      margin: 20px 0;
+     
+    
+  }
+  
+  .f-class {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+  
+  .inp-width {
+      min-width: 300px;
+  }
+  
+  .plus-minus-btn {
+      color: #3352F2;
+      font-size: 30px;
+      padding: 2px;
+      margin-top: 10px;
+      word-spacing: 20px;
+  }
+  
+  .booking-form .calculations {
+      margin: 10px 0;
+  }
+  
+  .booking-form .calculations p {
+      font-weight: 500;
+      margin-bottom: 10px;
+  }
+  
+  .booking-form input {
+      width: 40%;
+      display: block;
+      padding: 10px;
+      border-radius: 5px;
+      border: none; /*box booking change none to white*/
+      background:white;
+      border-radius: 4px;
+      margin: 10px 0;
+     
+  }
+  
+  .booking-form .inputs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+     
+     
+  }
+  
+  .booking-content {
+      color: #fff;
+      width: 80%;
+     
+  }
+  
+  .booking-content h1 {
+      font-size: 70px;
+      text-transform: uppercase;
+      font-family: 'Bebas Neue', cursive;
+      font-weight: 400;
+      margin-bottom: 25px;
+      
+  }
+  
+  .btn-style {
+      position:relative;
+      display: block;
+      width: 100%;
+      top:-20px;
+      padding: 0px;
+      border-radius: 5px;
+      border: none;
+      color: #fff;
+      font-weight: 500;
+      background-color: green;
+  }
+  .btn-style:hover{
+      transform: scale(1.2);
+  }
+  
+  .conformation {
+      color: red;
+      text-align: center;
+  }
+  
+  .amount {
+      display: flex;
+      justify-content: space-between;
+  }
+
+.main-content {
+    
+    position: absolute;
+    height: 150px;
+    top:-30px
+  
+    
+}

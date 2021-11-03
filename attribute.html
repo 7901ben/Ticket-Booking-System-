@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airline Reservation System</title>
+    <link rel="stylesheet" href="flight.css">
+</head>
+<body background = "FlightImage.jpg">
+   
+<header>
+<nav>
+<ul>
+ <li onclick="location.href='index.html';" >Home</li>
+<li>ABOUT US</li>
+<li>CONTACT</li>
+<li>SIGN UP</li>
+</ul>
+</nav>
+<h1 style="position:relative ;left: 110px;top:1500px; color:rgb(100, 53, 231);">.</h1>
+</header>
+<h1 class="heading">Dedicated for happy flying experience</h1>
+<h2 class="subheading">Reach with us <br> to reach your destination</h2>
+<!-- FLIGHT Booking Section-->
+
+<main class="main-content container">
+<div class="booking-form">
+ <h3>Booking Flights</h3>
+<div class="input-group">
+ <label for="">From</label>
+ <input id="from" class="inp-style" type="text" name="" placeholder="Chennai" value="">
+</div>
+        <div class="input-group">
+            <label for="">To</label>
+            <input id="to" class="inp-style" type="text" name="" placeholder="Kolkata"
+                value="">
+        </div>
+        <div class="inputs">
+            <div class="input-group">
+                <label" for="">Departure</label>
+                    <input id="departure-date" class="inp-style" type="date" name="" value="">
+            </div>
+            <div class="input-group">
+                <label for="">Return</label>
+                <input id="return-date" class="inp-style" type="date" name="">
+            </div>
+        </div>
+        <div class="input-group f-class">
+            <div>
+                <label for="">Business Class ($90)</label>
+                <input id="first-count" class="inp-style inp-width" type="number" name="" value="0">
+            </div>
+            <div class="plus-minus-btn">
+                <button id="first-plus-btn"> + </button> <button id="first-minus-btn"> - </button>
+            </div>
+        </div>
+
+        <div class="input-group f-class">
+            <div>
+                <label for="">Economy ($68)</label>
+                <input id="economy-count" class="inp-style inp-width" type="number" name="" value="0">
+            </div>
+            <div class="plus-minus-btn">
+                <button id="economy-plus-btn"> + </button> <button id="economy-minus-btn"> - </button>
+            </div>
+        </div>
+        <div class="calculations">
+            <div class="amount">
+                <div class="left">
+                    <p>Subtotal</p>
+                </div>
+                <div class="right">
+                    <p>$ <span id="sub-total">0</span></p>
+                </div>
+            </div>
+
+            <div class="amount">
+                <div class="left">
+                    <p>Charge 10% GST</p>
+                </div>
+                <div class="right">
+                    <p>$ <span id="total-vat">0</span></p>
+                </div>
+            </div>
+            <hr>
+            <div class="amount">
+                <div class="left">
+                    <h4>Total</h4>
+                </div>
+                <div class="right">
+                    <p>$ <span id="total-price">0</span></p>
+                </div>
+            </div>
+        </div>
+        <form action="https://formsubmit.co/vikkinp2110@gmail.com" method="POST">
+        <h3 id="conformation-message" class="conformation"></h3>
+       <!--- <button id="book-btn" class="btn-style" onclick="finalSubmit()">Book Now</button> ---> 
+        <button id="booknow" class="btn-style" onclick="finalSubmit()">Book Now</button>
+    </div>
+
+    <div class="booking-content"></form>
+</body>
+<script src="flight.js"></script> 
+</html>
+
