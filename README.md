@@ -42,7 +42,7 @@ V) Theatre Booking : Helps to book Theatre tickets .
 ![image](https://user-images.githubusercontent.com/66934832/140612176-85a12a11-537b-4986-b6cf-e28f24b58d55.png)
 <br>
 
-Login : Helps to verify users.<br>
+Vi) Login : Helps to verify users.<br>
 ![image](https://user-images.githubusercontent.com/66934832/140612233-1e32b6f1-759d-44ec-8867-052a25f7759e.png)
 
-
+Vii) About us : Has info of the team.
