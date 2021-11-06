@@ -50,4 +50,7 @@ Vii) About us : Has info of the team. <br>
 if expand button is clicked it shows detailed version of the team. <br>
 ![image](https://user-images.githubusercontent.com/66934832/140612370-63885422-9851-450b-9258-d17a2c308d58.png)
 
+Viii) map : Shows the start and end destination.
+<br>
+
 
