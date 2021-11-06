@@ -5,6 +5,7 @@ Our website consists of 8 modules
 i) Home ii) Bus Booking iii)TrainBooking iv) Flight Booking V) TheatreBooking Vi)Login Vii) About Us <br>
 Viii) Map 
 
+i)Home:- This is the mail module that connects all the modules together , It also has the mail confrimation for login .
 ![image](https://user-images.githubusercontent.com/66934832/133825310-cc3738f8-f73f-4006-a507-628ec8dff4a1.png)
 ![image](https://user-images.githubusercontent.com/66934832/133825244-4cd6f5d2-d759-4e86-8d6e-d6982bbf1cf9.png)
 ![image](https://user-images.githubusercontent.com/66934832/133825332-56860162-06c4-48ba-9b42-7429dff9b664.png)
