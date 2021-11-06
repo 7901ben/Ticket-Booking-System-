@@ -45,4 +45,7 @@ V) Theatre Booking : Helps to book Theatre tickets .
 Vi) Login : Helps to verify users.<br>
 ![image](https://user-images.githubusercontent.com/66934832/140612233-1e32b6f1-759d-44ec-8867-052a25f7759e.png)
 
-Vii) About us : Has info of the team.
+Vii) About us : Has info of the team. <br>
+![image](https://user-images.githubusercontent.com/66934832/140612310-509e0faa-002a-4fb0-bb7c-0c6b458a3089.png) <br>
+if expand button is clicked it shows detailed version of the team.
+
