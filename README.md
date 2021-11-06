@@ -53,5 +53,6 @@ if expand button is clicked it shows detailed version of the team. <br>
 Viii) map : Shows the start and end destination.
 <br>
 ![image](https://user-images.githubusercontent.com/66934832/140612476-b0f1eda3-7053-4169-872d-9022d723e424.png)
+![image](https://user-images.githubusercontent.com/66934832/140612514-f28f7f3f-7375-42db-8d81-a44add065965.png)
 
 
