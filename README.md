@@ -17,7 +17,7 @@ mail recived 📧 👍 :-
 ![image](https://user-images.githubusercontent.com/66934832/140611719-55890dde-2eaf-4d11-848b-e557b40878dd.png)
 
 
-Flight Bookings
+ii) Flight Bookings : This module allows to book flight ticket with mail 📧 confrimation 
 
 
 
