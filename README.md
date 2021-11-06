@@ -12,7 +12,7 @@ i)Home:- This is the mail module that connects all the modules together , It als
 ![image](https://user-images.githubusercontent.com/66934832/133825332-56860162-06c4-48ba-9b42-7429dff9b664.png)
 ![image](https://user-images.githubusercontent.com/66934832/140611639-29de73d9-ca30-4025-a550-afe4da2b88df.png)
 
-mail recived 📧 :- 
+mail recived 📧 👍 :- 
 
 
 
