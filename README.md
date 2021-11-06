@@ -6,4 +6,37 @@ Ticket Booking System is made using visual studio code with JS,HTML and CSS here
 ![image](https://user-images.githubusercontent.com/66934832/133825332-56860162-06c4-48ba-9b42-7429dff9b664.png)
 .
 
+![Screenshot (889)](https://user-images.githubusercontent.com/87609938/140053649-17994159-f8d4-44da-803a-56f5114ef716.png)
+
+
+
+
+
+
+
+![Screenshot (890)](https://user-images.githubusercontent.com/87609938/140053737-8cae0613-f132-4950-955a-35dd661627a2.png)
+
+
+
+
+
+
+
+
+
+
+
+![Screenshot (891)](https://user-images.githubusercontent.com/87609938/140053797-04bdf76d-0ea4-47b0-9b53-42ac40b2719a.png)
+
+
+
+
+
+
+
+
+
+
+
+![Screenshot (892)](https://user-images.githubusercontent.com/87609938/140053839-d9dea095-786d-434b-9105-ef60c482589c.png)
 
