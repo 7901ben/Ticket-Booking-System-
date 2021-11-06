@@ -45,7 +45,7 @@ ii) Flight Bookings : This module allows to book flight ticket with mail 📧 co
 ![Screenshot (891)](https://user-images.githubusercontent.com/87609938/140053797-04bdf76d-0ea4-47b0-9b53-42ac40b2719a.png)
 
 
-
+![Screenshot (892)](https://user-images.githubusercontent.com/87609938/140053839-d9dea095-786d-434b-9105-ef60c482589c.png)
 
 
 
@@ -61,7 +61,8 @@ ii) Flight Bookings : This module allows to book flight ticket with mail 📧 co
 iii) Bus Booking : Helps to book Bus ticket . 
 ![image](https://user-images.githubusercontent.com/66934832/140611831-1b156a3a-cf3c-4ec5-8199-2d727a97f5cd.png)
 
-![Screenshot (892)](https://user-images.githubusercontent.com/87609938/140053839-d9dea095-786d-434b-9105-ef60c482589c.png)
+![image](https://user-images.githubusercontent.com/66934832/140611869-4ec49899-9a40-4788-8fb5-ff7ca3a2f2d0.png)
+
 
 
 
