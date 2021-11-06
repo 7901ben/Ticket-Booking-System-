@@ -14,6 +14,7 @@ i)Home:- This is the mail module that connects all the modules together , It als
 
 mail recived 📧 👍 :- 
 
+![image](https://user-images.githubusercontent.com/66934832/140611719-55890dde-2eaf-4d11-848b-e557b40878dd.png)
 
 
 Flight Bookings
