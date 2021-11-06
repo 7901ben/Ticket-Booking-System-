@@ -37,4 +37,7 @@ iV) Train Booking : Allows to book trains .
 Ticket can also be printed
 ![image](https://user-images.githubusercontent.com/66934832/140612145-c7960701-c51c-4165-88a9-fd4ca44990ee.png)
 
+V) Theatre Booking : Helps to book Theatre tickets .
+![image](https://user-images.githubusercontent.com/66934832/140612176-85a12a11-537b-4986-b6cf-e28f24b58d55.png)
+
 
