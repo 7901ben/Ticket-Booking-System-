@@ -49,7 +49,6 @@ ii) Flight Bookings : This module allows to book flight ticket with mail 📧 co
 
 
 
-![image](https://user-images.githubusercontent.com/66934832/140611869-4ec49899-9a40-4788-8fb5-ff7ca3a2f2d0.png)
 
 
 
